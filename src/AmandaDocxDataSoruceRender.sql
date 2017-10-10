@@ -1,0 +1,31 @@
+DECLARE
+
+    L_CURSOR 										   SYS_REFCURSOR;
+    L_SQL_QUERY 									 VARCHAR2(4000) 	:= '';
+    L_ITEM_IN_LIST								 VARCHAR2(4000) 	:= '';
+    L_JSON_OBJECT 								 CLOB;
+    L_COUNTER										   NUMBER := 1;
+
+
+    CURSOR DATASOURCES IS
+			SELECT REGEXP_SUBSTR(apex_application.g_x01,'[^~]+', 1, LEVEL) AS STR FROM DUAL
+			CONNECT BY REGEXP_SUBSTR(apex_application.g_x01, '[^~]+', 1, LEVEL) IS NOT NULL;
+
+BEGIN
+
+
+ APEX_JSON.OPEN_OBJECT;
+ FOR C IN DATASOURCES LOOP
+
+    OPEN L_CURSOR FOR C.STR;
+    APEX_JSON.WRITE('DataSource'||L_COUNTER, L_CURSOR);
+
+    L_COUNTER := L_COUNTER + 1;
+
+  END LOOP;
+
+
+  APEX_JSON.CLOSE_ALL;
+
+
+END;
