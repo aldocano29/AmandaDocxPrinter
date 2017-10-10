@@ -43,4 +43,4 @@ Based upon the DocxTemplater javascript library by Edgar Hipp.
 
 
 ## Preview
-## ![](https://github.com/aldocano29/AmandaDocxPrinter/tree/master/img/Preview.png)
+## ![](https://github.com/aldocano29/AmandaDocxPrinter/blob/master/img/Preview.png)
