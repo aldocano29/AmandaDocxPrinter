@@ -11,13 +11,11 @@
   "license" : "Apache License 2.0",
   "author" : {
     "name" : "Aldo Cano",
-    "email" : "aldocano@xspanama.com",
-    "url" : "",
-    "twitter" : "",
+    "email" : "aldocano@xspanama.com"
   },
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/aldocano29/AmandaDocxPrinter.git"
+    "url" : "https://github.com/aldocano29/AmandaDocxPrinter"
   },
   "oracle" : {
     "versions" : ["11.2.0.1", "12.1.0.1", "12.2.0.1"],
@@ -26,7 +24,6 @@
       "plugin" : {
         "internalName" : "COM.AMANDASOFT.DOCXPRINTER",
         "type" : "dynamic action",
-        "demo" : "",
         "previewImage" : "https://github.com/aldocano29/AmandaDocxPrinter/blob/master/img/Preview.png"
       }
     }
