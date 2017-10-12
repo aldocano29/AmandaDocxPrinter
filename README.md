@@ -36,6 +36,8 @@ Available Plugin Settings :
 
 ## Demo Application
 - Inside **/plsql** you will find the Demo Application export file.
+- Also the Demo Application is at [https://apex.oracle.com/pls/apex/f?p=118977]
+- Credentials: demo/demo
 
 ## Related info
 Based upon the DocxTemplater javascript library by Edgar Hipp.
