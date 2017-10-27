@@ -175,12 +175,20 @@ var amanda_docx_printer = {
     //The Template is populated with the dataSources coming from the Dynamic Action, then the template is rendereed
     //If any kind of error occurs during the render process, it is caught and thrown
     console.log("Starts docxReplaceVariables Method");
-    console.log("dataSources: "+dataSources);
+    //console.log("dataSources: "+dataSources);
+	  //console.log(JSON.stringify(dataSources));
     //docxtemplater.setData(JSON.parse(dataSources));
     //console.log("JSON: "+JSON.parse(dataSources));
 
-    docxtemplater.setData(dataSources);
     try{
+
+      console.log(dataSources);
+      amanda_docx_printer.docxHTMLFinder();
+      console.log(dataSources);
+
+      docxtemplater.setData(dataSources);
+
+
       //The docxtemplater tries to render the template, if it has errors, then it will stop and throw the error...
       docxtemplater.render();
 
@@ -194,19 +202,61 @@ var amanda_docx_printer = {
       amanda_docx_printer.docxDownloader(docxOut);
     }
     catch (e) {
-      //console.log(JSON.stringify(e));
-      //console.log(JSON.stringify(e.name));
-      console.log(JSON.stringify(e.properties));
+      console.log(e);
       apex.message.clearErrors();
-      amanda_docx_printer.docxErrorHandler('e', e.name+": ["+e.properties.explanation+"]");
+      amanda_docx_printer.docxErrorHandler('e', "["+e+"]");
+      //amanda_docx_printer.docxErrorHandler('e', e.name+": ["+e.properties.explanation+"]");
     }
 
 
 
   },
 
-  docxReplaceTexts : function(){
+  docxReplaceTexts : function(varNode){
     return;
+  },
+
+  docxHTMLTranslate : function(varNode){
+    //Function that will translate the String variable "varNode" (with HTML format) into an
+    //OpenXml format string, then it will return its result
+    console.log("Starts docxHTMLTranslate");
+		console.log(html2docx.convertContent(varNode).string);
+		return html2docx.convertContent(varNode).string;
+  },
+
+  docxIsObject : function(obj){
+    return obj === Object(obj);
+  },
+
+  docxHTMLFinder : function(){
+    //Function that finds the HTML content inside the elements of the dataSources
+    //When an element is found, then it will call the docxHTMLTranslate function and
+    //Replace the value of that element with the returned value
+    console.log("Starts docxHTMLFinder");
+    var htmlArray = new Array();
+	  var counter = 0;
+
+	  for(var i in dataSources)
+	  {
+  		var inside = dataSources[i];
+  		for(var e in inside)
+  		{
+  		  var realdata = inside[e];
+  		  for(var rd in realdata)
+  		  {
+          var element = String(realdata[rd]);
+          if(typeof element != 'undefined')
+          {
+            if(element.startsWith("<"))
+  		      {
+      				var oldVal = realdata[rd];
+      				realdata[rd] = amanda_docx_printer.docxHTMLTranslate(oldVal);
+      				htmlArray[counter] = rd;
+    			  }
+          }
+  		  }
+  		}
+	  }
   },
 
   docxDownloader : function(){

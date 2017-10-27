@@ -1,6 +1,6 @@
 {
 	"name": "AmandaDocxPrinter",
-	"version": "v1.4.4",
+	"version": "v1.5.0",
 	"description": "Dynamic Action Plugin for Report Printing using Docx Templates and JSON",
 	"keywords": ["JSON", "Report", "Printing"],
 	"homepage": "https://github.com/aldocano29/AmandaDocxPrinter",
@@ -24,7 +24,7 @@
 			"plugin": {
 				"internalName": "COM.AMANDASOFT.DOCXPRINTER",
 				"type": "dynamic action",
-				"demo" : "https://apex.oracle.com/pls/apex/f?p=118977",
+				"demo" : "https://apex.oracle.com/pls/apex/f?p=107360",
 				"previewImage": "https://raw.githubusercontent.com/aldocano29/AmandaDocxPrinter/master/img/Preview.png"
 			}
 		}

@@ -67,6 +67,13 @@ create or replace PACKAGE BODY  PK_AMANDASOFT_PLUGINS AS
 			P_CHECK_TO_ADD_MINIFIED => FALSE
 		);
 
+        APEX_JAVASCRIPT.ADD_LIBRARY
+		(
+			P_NAME                  => 'AmandaHtml2Docx',
+			P_DIRECTORY             => P_PLUGIN.FILE_PREFIX,
+			P_CHECK_TO_ADD_MINIFIED => FALSE
+		);
+
 		APEX_JAVASCRIPT.ADD_LIBRARY
 		(
 			P_NAME                  => 'FileSaver',
