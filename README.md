@@ -5,6 +5,8 @@ Dynamic Action Plugin to Merge data from a query into a docx Template.
 ## Changelog
 
 #### 1.0.0 - Initial Release
+#### 1.4.4 - Functional Release  (Simple Tags and Loops)
+#### 1.5.0 - Functional Release2 (Added HTML tag)
 
 
 ## Install
