@@ -11,7 +11,7 @@
 	"license": "Apache License 2.0",
 	"author": {
 		"name": "Aldo Cano",
-		"email": "aldocano@xspanama.com"
+		"email": "aldocano@xspanama.com",
 	},
 	"repository": {
 		"type": "git",
