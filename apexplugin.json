@@ -1,6 +1,6 @@
 {
 	"name": "AmandaDocxPrinter",
-	"version": "v1.5.1",
+	"version": "v1.6.1",
 	"description": "Dynamic Action Plugin for Report Printing using Docx Templates and JSON",
 	"keywords": ["JSON", "Report", "Printing"],
 	"homepage": "https://github.com/aldocano29/AmandaDocxPrinter",
