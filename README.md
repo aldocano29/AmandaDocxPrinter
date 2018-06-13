@@ -12,8 +12,6 @@ Dynamic Action Plugin to Merge data from a query into a docx Template.
 ## Install
 
 - Import Plugin File **dynamic_action_plugin_com_amandasoft_docxprinter.sql** from the main directory into your Application.
-- Run the **PK_AMANDASOFT_PLUGINS_SPEC.sql** and **PK_AMANDASOFT_PLUGINS_BODY.sql** files from the **plslq** directory to create the Package (inside the Application Schema) used by this plugin.
-- Create an Ajax Callback Application Process (Shared Components) named **AmandaDocxDataSourceBuilder** using as PLSQL code the content of **/src/AmandaDocxDataSourceRender.sql**.
 
 
 ## Plugin Settings
