@@ -12,6 +12,7 @@ Dynamic Action Plugin to Merge data from a query into a docx Template.
 ## Install
 
 - Import Plugin File **dynamic_action_plugin_com_amandasoft_docxprinter.sql** from the main directory into your Application.
+- Make Sure the apex demo schema is available (The one that contains the tables for customers, orders, etc), because the demo application uses these tables to generate the documents.
 
 
 ## Plugin Settings
