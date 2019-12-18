@@ -36,7 +36,7 @@ Available Plugin Settings :
 - Add the item(s) holding the Query/Queries to the DataSources (If more than one is needed, separate them by commas)
 
 ## Demo Application
-- Inside **/plsql** you will find the Demo Application export file.
+- Inside **/plsql** you will find the Demo Application export file (exported from 19.2 so take that in consideration).
 - Also the Demo Application is at [https://apex.oracle.com/pls/apex/f?p=107360]
 - Credentials: demo/demo
 
